@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World App (React Preview)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+      }
+      .card {
+        border-radius: 1.5rem;
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(60,60,120,0.15);
+      }
+      footer {
+        border-top: 1px solid #f1f1f1;
+      }
+      .navbar {
+        border-bottom: 1px solid #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/babel">
+      function Navbar() {
+        return (
+          <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm animate__animated animate__fadeInDown">
+            <div className="container">
+              <a className="navbar-brand fw-bold" href="#">Hello World App</a>
+            </div>
+          </nav>
+        );
+      }
+      function Footer() {
+        return (
+          <footer className="bg-white text-center py-3 mt-auto shadow-sm animate__animated animate__fadeInUp">
+            <div className="container">
+              <span className="text-muted">&copy; {new Date().getFullYear()} Hello World App. All rights reserved.</span>
+            </div>
+          </footer>
+        );
+      }
+      function App() {
+        return (
+          <div className="d-flex flex-column min-vh-100">
+            <Navbar />
+            <div className="flex-grow-1 d-flex flex-column justify-content-center align-items-center bg-light">
+              <div className="card shadow-lg p-5 animate__animated animate__fadeInDown" style={{maxWidth: 400}}>
+                <h1 className="display-4 text-center mb-3">Hello World</h1>
+                <p className="lead text-center text-secondary">Welcome to your first React app!</p>
+              </div>
+            </div>
+            <Footer />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
